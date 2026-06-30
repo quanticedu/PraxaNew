@@ -22,7 +22,7 @@ class ChatModel(ChatOpenAI):
             **kwargs
         )
 
-def get_model(model_name: str = "google/gemma-3-27b-it:free") -> ChatModel:
+def get_model(model_name: str = "google/gemma-4-31b-it:free") -> ChatModel:
     """
     Gets a reference to a model
     
@@ -40,26 +40,26 @@ def get_model(model_name: str = "google/gemma-3-27b-it:free") -> ChatModel:
 if __name__ == "__main__":
 # when run as a script, run some tests to demonstrate capabilities
 #    model = get_model()
-#    from langchain_core.messages import HumanMessage
+#    from langchain_core.messages import HumanMessage, SystemMessage
 #    from langchain.prompts import ChatPromptTemplate
 
 #    prompt_template = ChatPromptTemplate([
-#        ("human", "You are a helpful assistant."),
+#        ("system", "You are a helpful assistant."),
 #        ("human", "What is {playwright}'s most recent play?")
 #    ])
 
 #    response = model.invoke(
-#        [HumanMessage("You are a helpful assistant."),
+#        [SystemMessage("You are a helpful assistant."),
 #         HumanMessage("What are some plays by Tawfiq al-Hakim?")])
 #    print(response.content)
 #    print("----------")
 #    response = model.invoke(
-#        [HumanMessage("You are a helpful assistant."),
+#        [SystemMessage("You are a helpful assistant."),
 #         HumanMessage("What is Ryan Calais Camerons's most recent play?")])
 #    print(response.content)
 #    print("----------")
 #    response = model.invoke(
-#        [HumanMessage("You are a helpful assistant."),
+#        [SystemMessage("You are a helpful assistant."),
 #         HumanMessage("What Broadway shows have more than 10,000 performances?")])
 #    print(response.content)
 

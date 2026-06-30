@@ -36,7 +36,6 @@ def load_context_data(path: str = "./context_data") -> list[Document]:
     """
     loader = PyPDFDirectoryLoader(path)
     return loader.load()
-    pass
 
 def chunk_context_data(context_data: list[Document]) -> list[Document]:
     """
@@ -55,7 +54,6 @@ def chunk_context_data(context_data: list[Document]) -> list[Document]:
     )
 
     return text_splitter.split_documents(context_data)
-    pass
 
 def get_embedding_model(model_name: str = "sentence-transformers/all-MiniLM-L6-v2") -> HuggingFaceEmbeddings:
     """
@@ -67,7 +65,6 @@ def get_embedding_model(model_name: str = "sentence-transformers/all-MiniLM-L6-v
     :rtype: HuggingFaceEmbeddings
     """
     return HuggingFaceEmbeddings(model_name=model_name)
-    pass
 
 def create_vector_store(chunks: list[Document], embedding_model: Embeddings = get_embedding_model(), path: str = "./chromadb") -> Chroma:
     """
@@ -87,7 +84,6 @@ def create_vector_store(chunks: list[Document], embedding_model: Embeddings = ge
         embedding=embedding_model,
         persist_directory=path
     )
-    pass
     
 def get_vector_store(embedding_model: Embeddings = get_embedding_model(), path: str = "./chromadb") -> Chroma:
     """
@@ -104,7 +100,6 @@ def get_vector_store(embedding_model: Embeddings = get_embedding_model(), path: 
         persist_directory=path,
         embedding_function=embedding_model
     )
-    pass
 
 if __name__ == "__main__":
     # when run as a script, run some tests to demonstrate capabilities
